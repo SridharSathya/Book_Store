@@ -1,0 +1,22 @@
+Requirements:
+------------
+1) NodeJS to be installed in machine
+
+
+Steps:
+-----
+1) Install NodeJS
+2) Unzip the code package
+3) Run 'npm install' in the 'Book_Store' folder directly
+4) Run 'ng build --prod' in the 'Book_Store' folder
+5) run 'npm start' (or) 'node server.js' in the Book_Store folder
+6) Open chrome and hit 'http://localhost:4200'
+7) Homepage will appear
+
+
+Test Cases:
+----------
+1) Run 'ng test' in 'Book_Store' folder
+2) Open coverage folder
+3) Open index.html
+4) Coverage report will be available
