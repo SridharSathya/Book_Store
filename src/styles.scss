@@ -1,0 +1,261 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+@font-face{
+    font-family: ThemeFont-Regular;
+    src: url(/assets/fonts/Lato-Regular.ttf);
+}
+
+@font-face{
+    font-family: ThemeFont-Bold;
+    src: url(/assets/fonts/Lato-Bold.ttf);
+}
+
+.themeShadow{
+    box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.2), 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+$color1: #755139;
+$color2: #d4b098;
+$color3: #282a2b;
+$color4: #043764;
+$color5: #1c3257;
+$color6: #DC3545;
+
+$size1: 0.5rem;
+$size2: 0.75rem;
+$size3: 1rem;
+$size4: 1.5rem;
+$size5: 2rem;
+$size6: 2.5rem;
+$size7: 5rem;
+$size8: 3rem;
+$size9: 4rem;
+
+.bgThemeColor4{
+    background-color: $color4;
+}
+
+.font-size1{
+    font-size: $size1;
+}
+
+.font-size2{
+    font-size: $size2;
+}
+
+.font-size6{
+    font-size: $size6;
+}
+
+.font-size4{
+    font-size: $size4;
+}
+
+.fontColor4{
+    color: $color4;
+}
+
+.fontColor6{
+    color: $color6;
+}
+
+*{
+    font-family: "ThemeFont-Regular", "Trebuchet MS", "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.lato-bold{
+    font-family: "ThemeFont-Bold", "Trebuchet MS", "Helvetica Neue", sans-serif;
+}
+
+.logo{
+    width: 5%;
+}
+
+.imgOverlay{
+    background: radial-gradient(ellipse at center, rgb(0,0,0) 0, rgb(0,0,0) 100%);
+}
+
+.heading1{
+    text-align: center;
+    font-size: $size7;
+    font-weight: bolder;
+}
+.heading2{
+    text-align: center;
+    font-size: $size6;
+    width: 100%;
+}
+.heading3{
+    text-align: center;
+    font-size: $size5;
+    width: 100%;
+}
+.heading4{
+    text-align: center;
+    font-size: $size5;
+    width: 100%;
+}
+.opacity-40{
+    opacity: 0.4;
+}
+.appimage{
+    width: 100%;
+    height: 100%;
+    @extend .opacity-40;
+}
+.imgTxt{
+    top: 40%;
+    position: absolute;
+    width: 100%;
+}
+.cards{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.navbar{
+    justify-content: end;
+    width: 100%;
+    font-size: 75%;
+    height: 100%;
+    padding: 0;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+.navbar a:hover{
+    color: black;
+}
+.bgColor1{
+    background-color: $color1;
+}
+.text-decoration-underline{
+    text-decoration: underline;
+}
+tr.mat-header-row{
+    background-color: $color2;
+    border: 1px solid $color2;
+    line-height: $size3;
+    th{
+        color: $color3;
+        font-size: $size3;
+        @extend .lato-bold;
+    }
+}
+.cursorPointer{
+    cursor: pointer;
+}
+footer{
+    font-size: $size3;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: $size8;
+    line-height: $size8;
+}
+.columnSpec{
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+@mixin colWidth($wid){
+    @extend .columnSpec;
+    text-align: center;
+    flex: 0 0 $wid !important;
+    width: $wid !important;
+}
+app-grid.booksListGrid{
+    .mat-column-refID{
+        @include colWidth(10%);
+    }
+    .mat-column-title{
+        @include colWidth(30%);
+    }
+    .mat-column-author{
+        @include colWidth(20%);
+    }
+    .mat-column-edition{
+        @include colWidth(12%);
+    }
+    .mat-column-status{
+        @include colWidth(14%);
+    }
+    .mat-column-addToCart{
+        @include colWidth(14%);
+    }
+}
+app-grid.removeBookGrid{
+    .mat-column-refID{
+        @include colWidth(10%);
+    }
+    .mat-column-title{
+        @include colWidth(32%);
+    }
+    .mat-column-author{
+        @include colWidth(22%);
+    }
+    .mat-column-edition{
+        @include colWidth(18%);
+    }
+    .mat-column-removeFromStore{
+        @include colWidth(18%);
+    }
+}
+app-grid.cartGrid{
+    .mat-column-refID{
+        @include colWidth(10%);
+    }
+    .mat-column-title{
+        @include colWidth(32%);
+    }
+    .mat-column-author{
+        @include colWidth(22%);
+    }
+    .mat-column-edition{
+        @include colWidth(18%);
+    }
+    .mat-column-removeFromCart{
+        @include colWidth(18%);
+    }
+}
+th.mat-header-cell{
+    text-align: center !important;
+}
+.cartImg{
+    width: $size5;
+}
+.banner{
+    display: block;
+    padding: $size3 $size7;
+    width: 100%;
+    z-index: 3;
+    min-height: $size7;
+    height: auto;
+}
+.mat-form-field-infix{
+    border: 0 !important;
+}
+.mat-form-field-invalid .mat-input-element{
+    color: $color6
+}
+.notification{
+    width: 1%;
+    right: 2%;
+    top: 1%;
+}

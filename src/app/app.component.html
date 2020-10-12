@@ -1,0 +1,19 @@
+<mat-toolbar class = "bgColor1">
+    <mat-toolbar-row>
+        <nav class = "navbar navbar-expand-lg">
+            <div class = "cnotainer-fluid">
+                <a routerLink = "/home">
+                <img class = "logo" src = "assets/images/logo.png">
+            </a>
+            <a *ngFor = "let m of menu" [routerLink] = "[m.link]" class = "lato-bold pl-4 pr-4">{{m.label}}</a>
+            </div>
+            </nav>
+            <div class = "d-flex justify-content-end cursorPointer">
+                <img src = "assets/images/shopping_cart.svg" class = "cartImg" (click) = "router.navigate(['view-cart'])">
+                <ng-container *ngIf = "dataService.storeData.addedToCart">
+                    <img src = "assets/images/notification.svg" class = "position-absolute notification">
+                </ng-container>
+            </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+<div class = "banner bg-white themeShadow">
+  <div class = "row mt-3">
+    <div class = "col">
+      <div class = "font-size6 fontColor4">List of Books</div>
+    </div>
+  </div>
+</div>
+<div class="p-4">
+  <div class = "text-center">
+    <app-grid [columnsToDisplay] = "columnsToDisplay" [headers] = "headers" class = "booksListGrid" [dataSource] = "dataSource" (iconActionEvent) = "iconActionEvent($event)"></app-grid>
+  </div>
+</div>

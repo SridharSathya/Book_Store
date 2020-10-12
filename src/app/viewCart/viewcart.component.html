@@ -1,0 +1,22 @@
+<div class = "banner bg-white themeShadow">
+    <div class = "row mt-3">
+      <div class = "col">
+        <div class = "font-size6 fontColor4" *ngIf = "dataSource.length > 0">Books in your Cart</div>
+        <div class = "font-size6 fontColor4" *ngIf = "dataSource.length === 0">Your Cart is empty</div>
+      </div>
+    <div class = "d-flex align-items-center justify-content-end"  *ngIf = "dataSource.length > 0">
+      <button mat-raised-button color="primary" (click) = "emptyCart()">Empty Cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="p-4">
+    <div class = "text-center" *ngIf = "dataSource.length > 0">
+      <app-grid #grid [columnsToDisplay] = "columnsToDisplay" [headers] = "headers" class = "cartGrid" [dataSource] = "dataSource" (iconActionEvent) = "iconActionEvent($event)"></app-grid>
+    </div>
+    <div class = "text-center" *ngIf = "dataSource.length === 0">
+      <img class = "w-100 opacity-40" src = "assets/images/empty-cart.jpg">
+    </div>
+    <div class = "mt-4 col d-flex align-items-end justify-content-end" *ngIf = "dataSource.length > 0">
+      <button mat-raised-button color="primary" (click) = "router.navigate(['order-success'])">Submit Order</button>
+    </div>
+  </div>

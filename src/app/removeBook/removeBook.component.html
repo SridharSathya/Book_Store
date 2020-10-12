@@ -1,0 +1,18 @@
+<div class = "banner bg-white themeShadow">
+    <div class = "row mt-3">
+      <div class = "col">
+        <div class = "font-size6 fontColor4">Remove a Book from Store</div>
+      </div>
+    <div class = "d-flex align-items-center justify-content-end">
+      <button mat-raised-button color="primary" (click) = "resetBooksList()">Reset Books List</button>
+    </div>
+  </div>
+  </div>
+  <div class="p-4">
+    <div class = "text-center" *ngIf = "displayGrid && dataSource.length > 0">
+      <app-grid [columnsToDisplay] = "columnsToDisplay" [headers] = "headers" class = "removeBookGrid" [dataSource] = "dataSource" (iconActionEvent) = "iconActionEvent($event)"></app-grid>
+    </div>
+    <div class = "text-center" *ngIf = "dataSource.length === 0">
+      <img class = "w-100 opacity-40" src = "assets/images/library.jpg">
+    </div>
+  </div>
